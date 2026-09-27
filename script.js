@@ -57,6 +57,10 @@ const translateCache = new Map(); // 同一文の翻訳結果を使い回すた�
 
 init();
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").catch(() => {});
+}
+
 async function init() {
   questTitles = await loadQuestTitles({ forceRefresh: false });
 }

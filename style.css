@@ -263,12 +263,6 @@ main {
   color: var(--color-accent);
 }
 
-.app-footer__note code {
-  background-color: var(--color-bg-panel-alt);
-  padding: 1px 5px;
-  border-radius: 4px;
-}
-
 @media (max-width: 480px) {
   .search-area__box {
     flex-direction: column;

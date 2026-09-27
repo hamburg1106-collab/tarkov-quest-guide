@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>タルコフ クエスト攻略ガイド</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>タルコフ クエスト攻略ガイド</h1>
+    <p class="app-header__desc">クエスト名を検索すると、Wiki から目的・報酬・攻略情報を取得して表示します。</p>
+  </header>
+
+  <main>
+    <section class="search-area">
+      <label for="searchInput" class="search-area__label">クエスト名で検索(英語表記)</label>
+      <div class="search-area__box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="例: Debut, Gunsmith - AKM ..."
+          autocomplete="off"
+        />
+        <button id="reloadListButton" type="button" title="クエスト一覧を再取得します">一覧再取得</button>
+      </div>
+      <ul id="suggestList" class="suggest-list" hidden></ul>
+      <p id="listStatus" class="list-status"></p>
+    </section>
+
+    <section id="result" class="result">
+      <p class="result__placeholder">クエストを検索して一覧から選択してください。</p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>
+      情報提供:
+      <a href="https://escapefromtarkov.fandom.com/" target="_blank" rel="noopener">
+        Escape from Tarkov Wiki(英語版)
+      </a>
+      / このページは非公式のファンメイドツールです。
+    </p>
+    <p class="app-footer__note">
+      ※ クエスト情報の取得には外部 Wiki への通信が必要です。<code>file://</code> で直接開くとブラウザによっては通信がブロックされる場合があるため、
+      その場合はこのフォルダで <code>python -m http.server 8000 --bind 127.0.0.1</code> を実行し、
+      <code>http://localhost:8000/</code> をブラウザで開いてください。
+      (<code>--bind 127.0.0.1</code> を付けることで、同じネットワーク内の他の端末からはアクセスできず、自分のPCからのみ閲覧できます)
+    </p>
+    <p class="app-footer__note">
+      ※ 目的・報酬などの日本語訳は機械翻訳(Google 翻訳)による自動生成です。マップ名・アイテム名・トレーダー名などの固有名詞は
+      あえて英語表記のまま残しています。訳が不自然な場合は「原文(英語)を表示」で確認してください。
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

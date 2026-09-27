@@ -143,6 +143,14 @@ main {
   color: var(--color-danger);
 }
 
+.result__notice {
+  margin: 0 0 16px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--color-accent);
+  background-color: var(--color-bg-panel-alt);
+  font-size: 0.85rem;
+}
+
 .quest-header {
   display: flex;
   gap: 16px;
